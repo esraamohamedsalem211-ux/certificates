@@ -1,0 +1,1 @@
+weather in Alex  temperature  22 humidity   69%  status   Clear
