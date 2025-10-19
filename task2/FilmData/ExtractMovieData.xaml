@@ -1,0 +1,213 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractMovieData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_strMovieLink" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strMoviePopularity" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strMovieRating" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strMovieName" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ExtractMovieData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ExtractMovieData" sap:VirtualizedContainerService.HintSize="1000.4000000000001,1070.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strMovieName" />
+      <Variable x:TypeArguments="x:String" Name="strMovieRating" />
+      <Variable x:TypeArguments="x:String" Name="strMoviePopularity" />
+      <Variable x:TypeArguments="x:String" Name="strMovieLink" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="516.8,1166.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Titanic (1997) - IMDb" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,872.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="3ccb5887-44f8-4df2-8c45-10dfcd8bf329" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,624" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGetText DisplayName="Get MovieName" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="3ccb5887-44f8-4df2-8c45-10dfcd8bf329" TextString="[strMovieName]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt0120338" CVScreenId="e88f7079-8414-4f99-8d72-af33ae6b8295" ContentHash="xLZ4qe30Ak2AnFH9go_hFg" CvType="AnyWordGroup" DesignTimeRectangle="190, 265, 181, 72" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='hero__primary-text' parentid='__next' tag='SPAN' /&gt;" Guid="10209761-cb6d-4728-a134-ced34df2f37c" InformativeScreenshot="6e31810bb9102e88466abff0a8ae196a.png" Reference="E2Ptq2K86E-JFQPyMrixEg/3VIv9rmVf0qoVbyDqEK62Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Titanic (1997) - IMDb' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="GetMovie-RATING'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="3ccb5887-44f8-4df2-8c45-10dfcd8bf329" TextString="[strMovieRating]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt0120338" CVScreenId="50d66cf2-3241-4cd4-8b77-976d4251acf6" ContentHash="Pr1jsu2I40WIOtsm6s8ohg" CvType="AnyWordGroup" DesignTimeRectangle="1314, 299, 39, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='SPAN' type='' class='sc-4dc495c1-1 lbQcRY' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="e23a1a09-412e-4f3a-a61e-7c2ff50ec220" InformativeScreenshot="2169700568f3759ccc0f7169a98f4f38.png" Reference="E2Ptq2K86E-JFQPyMrixEg/5envjbSbUUiFKqV7t4B2wg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Titanic (1997) - IMDb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="50d66cf2-3241-4cd4-8b77-976d4251acf6" CvTextArea="1267, 276, 120, 15" CvTextArgument="IMDb RATING" CvType="Text" DesignTimeRectangle="1270, 274, 120, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='IMDb RATING' parentid='__next' tag='DIV' type='' class='sc-9d3bc82f-1 lhxLQH' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='IMDb RATING' /&gt;" Guid="092f233c-937d-424a-ac8e-e9dddafb1943" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get movie -popularity" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="3ccb5887-44f8-4df2-8c45-10dfcd8bf329" TextString="[strMoviePopularity]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt0120338" CVScreenId="42ed3b44-8a3a-4ef5-83b4-f617ceeb39c7" ContentHash="iggXBsbRJU2zpn5ntuU9Mw" CvType="AnyWordGroup" DesignTimeRectangle="1619, 307, 47, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='DIV' type='' class='sc-c5358bb8-1 ixcZce' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="da1d33ba-52a3-4815-bce7-2b68bb50e582" InformativeScreenshot="9cbf8abde0d1778f2873712132e9208f.png" Reference="E2Ptq2K86E-JFQPyMrixEg/q6Mvga8OGEG-oouSGIJTIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Titanic (1997) - IMDb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'imdb.comtitlett012033…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,135.2" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="3ccb5887-44f8-4df2-8c45-10dfcd8bf329" TextString="[strMovieLink]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt0120338" CVScreenId="0609b456-20b4-436e-99ed-b2e6b859e0ce" ContentHash="tVBkvZPhnUiteNEWECQKkA" CvElementArea="146, 65, 1598, 43" CvType="InputBox" DesignTimeRectangle="205, 72, 1497, 31" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Titanic (1997) - IMDb - Google Chrome - Esraa (esraa.mohamed.sal*' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" Guid="3d0eb532-551e-4dd4-8af3-c8dfc3ee4083" InformativeScreenshot="05f4c01b9cbb9c26138ac3de758f70fe.png" Reference="E2Ptq2K86E-JFQPyMrixEg/DKcDaDyi8U2TpNJ7j8FC7w" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Titanic (1997) - IMDb - Google Chrome' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="WS1RKUxTqUu1NwJqeomF6Q" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbtJREFUWEdj+HpU4v9AYgZ0AXrjUQeMOmDUAaMOGHwOWNTE/9/VnO1/mCvH/0NzhMFsEE704/z/dIcYnA/CV1aLoPDdLNj+VyXx/P98WPx/TjgXWKy7gBfDUrwOaMzg+c/AwPBfQpjp/9puQTAbhDnZGf4fmSsM54PwiYUIviAvI5y9vE3gv5kOK5id5MeJYSlZDgDhzjxenA7YPlnwPwszhD2hmA/uAFDIre4UAOMvR8TJcwAbK8RgUJCCQgKbA3ZNFfrPxQEJBWQHsLMh1Ddn8pDnAHV5ZjDNwcbwX0uRhSgHmGpDHBDjxfnf34EdzPa1YyfPAYYaLP8lRZjAbG9biGGEHABPA/6cYAxi+9iS6QAjDZb/toZsYDYodeNyACx6aOIAUGICsfuKEAkR2QG1qRB9IDyxBBEFsV6c/0NdOMBssqMA5IDWbIjF63sROQPZATDMxMTw/+h8YXgIsLIg5CoTuQk74OQi4f/Tq/j+L2zk/39rvSiYvbpL4P+VVSJg9uPtYmAahJ9sh8jD8IwqPrB+kDlrugXAYofnCP+fWsH3f0o53/8PB4nIhvTGow4YdcCoA0YdMOoAAJ8hGl9vu9AmAAAAAElFTkSuQmCC" InformativeScreenshot="d364a5643d679faf9d4ee89807ef3c9a.jpg" Reference="E2Ptq2K86E-JFQPyMrixEg/2RK3f2vNH0K_p8n_dK6ElA" Selector="&lt;html app='chrome.exe' title='Titanic (1997) - IMDb' /&gt;" Url="https://www.imdb.com/title/tt0120338/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Titanic" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="483.2,233.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_strMovieName]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[strMovieName]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_strMovieRating]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[strMovieRating]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_strMoviePopularity]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[strMoviePopularity]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_strMovieLink]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[strMovieLink]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+    </Sequence>
+  </Sequence>
+</Activity>

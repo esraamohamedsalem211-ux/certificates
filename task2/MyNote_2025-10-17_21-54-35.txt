@@ -1,0 +1,1 @@
+weather in cairo  temperature  27 humidity   37%  status   Clear

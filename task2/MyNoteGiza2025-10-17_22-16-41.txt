@@ -1,0 +1,1 @@
+weather in  :Giza  temperature: 23  humidity:   54%  status: Clearweather  :Alex temperature: 21  humidity:   72%  status: Clear

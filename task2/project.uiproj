@@ -1,0 +1,6 @@
+{
+  "Name": "task1-part1",
+  "ProjectType": "Process",
+  "Description": "Blank Process",
+  "MainFile": "Task1modern.xaml"
+}

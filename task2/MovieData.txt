@@ -1,0 +1,4 @@
+Movie Name: Titanic
+Rating: 7.9
+Popularity: 245
+Link: imdb.com/title/tt0120338/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_titanic
