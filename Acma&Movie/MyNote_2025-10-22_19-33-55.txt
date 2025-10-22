@@ -1,0 +1,16 @@
+MovieName   The Godfather
+Movie Rate   97%
+Movie Year   (1972)
+ MovieName   Casablanca
+Movie Rate   99%
+Movie Year   (1942)
+ MovieName   L.A. Confidential
+Movie Rate   99%
+Movie Year   (1997)
+ MovieName   Seven Samurai
+Movie Rate   100%
+Movie Year   (1954)
+ MovieName   Parasite
+Movie Rate   99%
+Movie Year   (2019)
+ 

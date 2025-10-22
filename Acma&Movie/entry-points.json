@@ -1,0 +1,18 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "tomatoo\\Open-browser.xaml",
+      "uniqueId": "6d6b77fb-3e2f-4192-b93d-5acd14bffd36",
+      "type": "process",
+      "output": {
+        "type": "object",
+        "properties": {
+          "out_allMovieData": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}
