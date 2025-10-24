@@ -1,0 +1,6 @@
+{
+  "Name": "RPAchallange",
+  "ProjectType": "Process",
+  "Description": "Blank Process",
+  "MainFile": "readData.xaml"
+}
